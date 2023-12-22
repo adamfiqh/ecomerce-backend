@@ -6,7 +6,7 @@ const productSchema = new Schema(
     name: {
       type: String,
       minlength: [3, "Panjang nama makanan minimal 3 karakter"],
-      required: [true, "Nama makanan harus diisi"], // Perbaikan penulisan required
+      required: [true, "Nama makanan harus diisi"],
     },
 
     description: {
@@ -20,6 +20,15 @@ const productSchema = new Schema(
     },
 
     image_url: String,
+
+    category: {
+      type: Schema.Types.ObjectId,
+      ref: "Category",
+    },
+    tags: {
+      type: Schema.Types.ObjectId,
+      ref: "Tag",
+    },
   },
   { timestamps: true }
 );
