@@ -41,47 +41,45 @@ const localStrategy = async (email, password, done) => {
 
 const login = (req, res, next) => {
   passport.authenticate("local", async function (err, user) {
-    try {
-      if (err) return next(err);
-      if (!user)
-        return res.json({ error: 1, message: "Email or password incorrect" });
-      let signed = jwt.sign(user, config.secretKey);
-      await User.findByIdAndUpdate(user._id, { $push: { token: signed } });
-      res.json({
-        message: "Login successfully",
-        user,
-        token: signed,
-      });
-    } catch (error) {
-      next(error);
-    }
+    if (err) return next(err);
+    if (!user)
+      return res.json({ error: 1, message: "Email or password incorrect" });
+    let signed = jwt.sign(user, config.secretKey);
+    await User.findByIdAndUpdate(user._id, { $push: { token: signed } });
+    res.json({
+      message: "Login successfully",
+      user,
+      token: signed,
+    });
   })(req, res, next);
 };
 
 const logout = async (req, res, next) => {
-  try {
-    let token = getToken(req);
-    let user = await User.findOneAndUpdate({ token: { $in: [token] } });
-    if (!token || !user) {
+  let token = getToken(req);
+
+  await User.findOneAndUpdate(
+    { token: { $in: [token] } },
+    { $pull: { token: token } },
+    { useFindAndModify: false }
+  )
+    .exec() // Menambahkan .exec() untuk mengeksekusi kueri dan mengembalikan Promise
+    .then((user) => {
+      if (!token || !user) {
+        return res.json({
+          error: 1,
+          message: "No user found!!",
+        });
+      }
+
       return res.json({
-        error: 1,
-        message: "No user found!!",
+        error: 0,
+        message: "Logout successfully",
       });
-    }
-
-    await User.findOneAndUpdate(
-      { _id: user._id },
-      { $pull: { token: token } },
-      { useFindModify: false }
-    );
-
-    return res.json({
-      error: 0,
-      message: "Logout successfully",
+    })
+    .catch((error) => {
+      // Tangani kesalahan jika terjadi
+      next(error);
     });
-  } catch (error) {
-    next(error);
-  }
 };
 
 const me = (req, res, next) => {

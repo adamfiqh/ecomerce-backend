@@ -2,6 +2,7 @@ const { getToken } = require("../utils");
 const jwt = require("jsonwebtoken");
 const config = require("../app/config"); // Gantilah ini sesuai struktur proyek Anda
 const User = require("../app/user/model");
+
 function decodeToken() {
   return async function (req, res, next) {
     try {
@@ -35,4 +36,6 @@ function decodeToken() {
   };
 }
 
-module.exports = decodeToken;
+module.exports = {
+  decodeToken,
+};
