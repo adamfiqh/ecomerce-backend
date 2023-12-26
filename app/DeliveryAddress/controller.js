@@ -1,17 +1,19 @@
+const { policyFor } = require("../../utils");
 const DeliveryAddress = require("./model");
+const { subject } = require("@casl/ability");
 
 const store = async (req, res, next) => {
   try {
     let payload = req.body;
     let user = req.user;
 
-    let address = await new DeliveryAddress({ ...payload, user: user._id });
+    let address = new DeliveryAddress({ ...payload, user: user._id });
     await address.save();
 
     res.status(201).json(address);
   } catch (err) {
     if (err && err.name === "ValidationError") {
-      return res.json({
+      return res.status(422).json({
         error: 1,
         message: err.message,
         fields: err.errors,
@@ -20,35 +22,48 @@ const store = async (req, res, next) => {
     next(err);
   }
 };
+
 const update = async (req, res, next) => {
   try {
-    let payload = req.body;
-    let addressId = req.params.id;
-    let user = req.user;
+    let { _id, ...payload } = req.body;
+    let { id } = req.params;
+    let address = await DeliveryAddress.findById(id);
+    let subjectAddress = subject("DeliveryAddress", {
+      ...address,
+      user_id: address.user,
+    });
 
-    let address = await DeliveryAddress.findOneAndUpdate(
-      { _id: addressId, user: user._id },
-      payload,
-      { new: true, runValidators: true }
-    );
-
-    if (!address) {
-      return res.status(404).json({ error: 1, message: "Address not found" });
+    let policy = policyFor(req.user);
+    if (!policy.can("update", subjectAddress)) {
+      return res.status(403).json({
+        error: 1,
+        message: `You are not allowed to modify this resource`,
+      });
     }
 
-    return res.json(address);
+    address = await DeliveryAddress.findByIdAndUpdate(id, payload, {
+      new: true,
+    });
+    res.json(address);
   } catch (err) {
+    if (err && err.name === "ValidationError") {
+      return res.status(422).json({
+        error: 1,
+        message: err.message,
+        fields: err.errors,
+      });
+    }
     next(err);
   }
 };
 
 const destroy = async (req, res, next) => {
   try {
-    let addressId = req.params.id;
+    let { id } = req.params;
     let user = req.user;
 
     let address = await DeliveryAddress.findOneAndDelete({
-      _id: addressId,
+      _id: id,
       user: user._id,
     });
 
@@ -61,6 +76,7 @@ const destroy = async (req, res, next) => {
     next(err);
   }
 };
+
 const index = async (req, res, next) => {
   try {
     let user = req.user;
