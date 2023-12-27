@@ -20,7 +20,7 @@ const update = async (req, res, next) => {
       });
     }
 
-    let CartItems = items.map((item) => {
+    let CartItem = items.map((item) => {
       let relatedProduct = products.find(
         (product) => product._id.toString() === item.product._id
       );
@@ -36,10 +36,10 @@ const update = async (req, res, next) => {
     });
 
     // Menghapus item keranjang belanja yang ada untuk pengguna tertentu
-    await CartItems.deleteMany({ user: req.user._id });
+    await CartItem.deleteMany({ user: req.user._id });
 
     // Menyimpan atau memperbarui item keranjang belanja yang baru
-    await CartItems.bulkWrite(
+    await CartItem.bulkWrite(
       cartItems.map((item) => {
         return {
           updateOne: {
@@ -76,9 +76,7 @@ const update = async (req, res, next) => {
 
 const index = async (req, res, next) => {
   try {
-    let items = await CartItems.find({ user: req.user._id }).populate(
-      "product"
-    );
+    let items = await CartItem.find({ user: req.user._id }).populate("product");
     return res.json(items);
   } catch (err) {
     if (err && err.name == "ValidationError") {

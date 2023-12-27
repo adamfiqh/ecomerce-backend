@@ -1,25 +1,25 @@
-const { police_check } = require("../../middlewares");
+const { policy_check } = require("../../middlewares");
 const deliveryAddressController = require("./controller");
 
 const router = require("express").Router();
 router.get(
   "/delivery-addresses",
-  police_check("read", "DeliveryAddress"),
+  policy_check("read", "DeliveryAddress"),
   deliveryAddressController.index
 );
 router.post(
   "/delivery-addresses",
-  police_check("create", "DeliveryAddress"),
+  policy_check("create", "DeliveryAddress"),
   deliveryAddressController.store
 );
 router.put(
   "/delivery-addresses/:id",
-  police_check("update", "DeliveryAddress"),
+  policy_check("update", "DeliveryAddress"),
   deliveryAddressController.update
 );
 router.delete(
   "/delivery-addresses/:id",
-  police_check("delete", "DeliveryAddress"),
+  policy_check("delete", "DeliveryAddress"),
   deliveryAddressController.destroy
 );
 
