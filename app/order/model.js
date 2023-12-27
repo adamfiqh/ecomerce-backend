@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 const AutoIncrement = require("mongoose-sequence");
-const Invoice = require("./path/to/InvoiceModel");
+const Invoice = require("../invoice/model");
 
 const orderSchema = Schema(
   {
