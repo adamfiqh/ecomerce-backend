@@ -1,5 +1,6 @@
-const { Schema, model } = require("mongoose");
-const AutoIncrement = require("mongoose-sequence");
+const mongoose = require("mongoose");
+// const { Schema, model } = require("mongoose");
+const AutoIncrement = require("mongoose-sequence")(mongoose);
 const Invoice = require("../invoice/model");
 
 const orderSchema = Schema(
