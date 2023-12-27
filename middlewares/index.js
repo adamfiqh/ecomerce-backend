@@ -34,7 +34,7 @@ function decodeToken() {
   };
 }
 
-function police_check(action, subject) {
+function policy_check(action, subject) {
   return function (req, res, next) {
     let policy = policyFor(req.user);
     if (!policy.can(action, subject)) {
@@ -49,5 +49,5 @@ function police_check(action, subject) {
 
 module.exports = {
   decodeToken,
-  police_check,
+  policy_check,
 };
