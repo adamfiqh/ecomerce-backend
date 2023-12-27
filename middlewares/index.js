@@ -1,6 +1,6 @@
 const { getToken, policyFor } = require("../utils");
 const jwt = require("jsonwebtoken");
-const config = require("../app/config"); // Gantilah ini sesuai struktur proyek Anda
+const config = require("../app/config");
 const User = require("../app/user/model");
 
 function decodeToken() {
@@ -9,7 +9,7 @@ function decodeToken() {
       const token = getToken(req);
       if (!token) return next();
 
-      req.user = jwt.verify(token, config.secretKey); // Sesuaikan secretKey dengan struktur proyek Anda
+      req.user = jwt.verify(token, config.secretKey);
 
       let user = await User.findOne({ token: { $in: [token] } });
       if (!user) {
@@ -19,8 +19,6 @@ function decodeToken() {
         });
       }
 
-      // Jika Anda ingin melanjutkan ke middleware atau rute berikutnya,
-      // Anda perlu memanggil next() di sini
       next();
     } catch (err) {
       if (err && err.name === "JsonWebTokenError") {
