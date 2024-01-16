@@ -1,0 +1,12 @@
+{
+    "_id" : ObjectId("6583ecea86264a93a1c2ca63"),
+    "name" : "drink",
+    "description" : "tetsing",
+    "price" : NumberInt(100000),
+    "image_url" : "2e3b1ca294840bd139ed640ef866c05a.jpg",
+    "category" : ObjectId("6583bb2d0f3598f3bbe7fc30"),
+    "createdAt" : ISODate("2023-12-21T07:44:43.000+0000"),
+    "updatedAt" : ISODate("2023-12-21T09:48:11.850+0000"),
+    "__v" : NumberInt(0),
+    "tags" : ObjectId("658408d935a472dc484bbbef")
+}

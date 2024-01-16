@@ -1,0 +1,85 @@
+{
+    "_id" : ObjectId("6584e855974867875b2f595e"),
+    "full_name" : "edi hartono",
+    "email" : "adam@gmail.com",
+    "password" : "$2b$10$y2oVQMlDDWJp0bwgmquCveAAmKgmYubmj5HAozjT3Umg1MW6renYu",
+    "role" : "user",
+    "token" : [
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg0ZTg1NTk3NDg2Nzg3NWIyZjU5NWUiLCJmdWxsX25hbWUiOiJlZGkgaGFydG9ubyIsImVtYWlsIjoiYWRhbUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImN1c3RvbWVyX2lkIjoxLCJpYXQiOjE3MDMyMTA5NTV9.NXVfwjcScbhoNaui7EB5Cch3GDuW-LEDflSUe2HEMeM"
+    ],
+    "createdAt" : ISODate("2023-12-22T01:37:25.500+0000"),
+    "updatedAt" : ISODate("2023-12-22T02:09:15.870+0000"),
+    "customer_id" : NumberInt(1),
+    "__v" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("65853686211efdd2bed1f0d7"),
+    "full_name" : "azlan rafif",
+    "email" : "azlan@gmail.com",
+    "password" : "$2b$10$mzYhTcXv3TiHVmS2FaqBv.hZ7w0DhsswmkDPIX6lUvxDjL3a3yRjC",
+    "role" : "user",
+    "token" : [
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg1MzY4NjIxMWVmZGQyYmVkMWYwZDciLCJmdWxsX25hbWUiOiJhemxhbiByYWZpZiIsImVtYWlsIjoiYXpsYW5AZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJjdXN0b21lcl9pZCI6MiwiaWF0IjoxNzAzMjI5MDk2fQ.-miLi3MvKEfCk67PSvHahj4XKObjBUpiiNbQy4ZhKQ0"
+    ],
+    "createdAt" : ISODate("2023-12-22T07:11:02.301+0000"),
+    "updatedAt" : ISODate("2023-12-22T07:11:36.825+0000"),
+    "customer_id" : NumberInt(2),
+    "__v" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("6585376d211efdd2bed1f0de"),
+    "full_name" : "vira",
+    "email" : "vira@gmail.com",
+    "password" : "$2b$10$7QbsFzX4SY09/IUohdrzCuNXaIn.SvS3GsWUszvMD5YEKZUj9DLGe",
+    "role" : "user",
+    "token" : [
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg1Mzc2ZDIxMWVmZGQyYmVkMWYwZGUiLCJmdWxsX25hbWUiOiJ2aXJhIiwiZW1haWwiOiJ2aXJhQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiY3VzdG9tZXJfaWQiOjMsImlhdCI6MTcwMzIyOTMyNH0.eak_meeS1u4aZOfxvwLkfeyXiCJsaCFhX8ZoKcCNpGw"
+    ],
+    "createdAt" : ISODate("2023-12-22T07:14:53.171+0000"),
+    "updatedAt" : ISODate("2023-12-22T07:15:24.818+0000"),
+    "customer_id" : NumberInt(3),
+    "__v" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("658929f45408fe1d2b86c175"),
+    "full_name" : "arza",
+    "email" : "arza@gmail.com",
+    "password" : "$2b$10$qjXa3QNJrSB4pmP4viB1kuiQKa.rifGWmgGE5aFLzWyx9rDwLculG",
+    "role" : "user",
+    "token" : [
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MjlmNDU0MDhmZTFkMmI4NmMxNzUiLCJmdWxsX25hbWUiOiJhcnphIiwiZW1haWwiOiJhcnphQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiY3VzdG9tZXJfaWQiOjQsImlhdCI6MTcwMzQ4ODAxMX0.qufibE-pIueIHTmaL_CM1SIoUVURTE7srd1riPiFlGI"
+    ],
+    "createdAt" : ISODate("2023-12-25T07:06:28.584+0000"),
+    "updatedAt" : ISODate("2023-12-25T07:06:51.683+0000"),
+    "customer_id" : NumberInt(4),
+    "__v" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("65892cc0edaa53b3bc85318b"),
+    "full_name" : "azlan rafif",
+    "email" : "azRafif@gmail.com",
+    "password" : "$2b$10$/QutfIy9ZWRmRfJSNyoAXO1g83iiqkS7nIQPJPExSvoE9hE3o09gq",
+    "role" : "user",
+    "token" : [
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MmNjMGVkYWE1M2IzYmM4NTMxOGIiLCJmdWxsX25hbWUiOiJhemxhbiByYWZpZiIsImVtYWlsIjoiYXpSYWZpZkBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImN1c3RvbWVyX2lkIjo1LCJpYXQiOjE3MDM0ODg3MjB9.3uWhj00hQ64CRfXmmpj7cqzcYtNz0myIIZUisyLD2vQ"
+    ],
+    "createdAt" : ISODate("2023-12-25T07:18:24.707+0000"),
+    "updatedAt" : ISODate("2023-12-25T07:18:40.831+0000"),
+    "customer_id" : NumberInt(5),
+    "__v" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("65892e22645bfbdc85dc1260"),
+    "full_name" : "omar al qadri",
+    "email" : "omar@gmail.com",
+    "password" : "$2b$10$BtXlpu3/.lFf2HRiGO2iyOtK3kNLKolKSltxryNC9QpsSBsPDSNMm",
+    "role" : "user",
+    "token" : [
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MmUyMjY0NWJmYmRjODVkYzEyNjAiLCJmdWxsX25hbWUiOiJvbWFyIGFsIHFhZHJpIiwiZW1haWwiOiJvbWFyQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiY3VzdG9tZXJfaWQiOjYsImlhdCI6MTcwMzQ4OTE3NH0.VvMrZytU9qU25EvbpOPlb_ap89XVkNzAVH8PgjgYngY",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MmUyMjY0NWJmYmRjODVkYzEyNjAiLCJmdWxsX25hbWUiOiJvbWFyIGFsIHFhZHJpIiwiZW1haWwiOiJvbWFyQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiY3VzdG9tZXJfaWQiOjYsImlhdCI6MTcwMzQ4OTMyNn0.N_sCcXY2eWKzeHDaKGmj3_D3SlzV0xvWDrGVxFStsEE"
+    ],
+    "createdAt" : ISODate("2023-12-25T07:24:18.244+0000"),
+    "updatedAt" : ISODate("2023-12-25T07:28:46.276+0000"),
+    "customer_id" : NumberInt(6),
+    "__v" : NumberInt(0)
+}

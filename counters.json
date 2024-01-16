@@ -1,0 +1,6 @@
+{
+    "_id" : ObjectId("6584e8557be938f9268dddb7"),
+    "id" : "customer_id",
+    "reference_value" : null,
+    "seq" : NumberInt(6)
+}
